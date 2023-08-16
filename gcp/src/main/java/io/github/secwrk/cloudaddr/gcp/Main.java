@@ -61,11 +61,11 @@ public class Main {
                 .toList();
 
         // Write IPv6 prefixes to file
-        FileWriter.writeJsonFile("data/aws/gcp-ipv4.json", new Prefixes("GCP", ipv4));
-        FileWriter.writeTextFile("data/aws/gcp-ipv4.txt", new Prefixes("GCP", ipv4));
+        FileWriter.writeJsonFile("data/gcp/gcp-ipv4.json", new Prefixes("GCP", ipv4));
+        FileWriter.writeTextFile("data/gcp/gcp-ipv4.txt", new Prefixes("GCP", ipv4));
 
         // Write IPv6 prefixes to file
-        FileWriter.writeJsonFile("data/aws/gcp-ipv6.json", new Prefixes("GCP", ipv6));
-        FileWriter.writeTextFile("data/aws/gcp-ipv6.txt", new Prefixes("GCP", ipv6));
+        FileWriter.writeJsonFile("data/gcp/gcp-ipv6.json", new Prefixes("GCP", ipv6));
+        FileWriter.writeTextFile("data/gcp/gcp-ipv6.txt", new Prefixes("GCP", ipv6));
     }
 }
