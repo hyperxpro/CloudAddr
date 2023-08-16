@@ -11,6 +11,7 @@
     <modules>
         <module>aws</module>
         <module>core</module>
+        <module>gcp</module>
     </modules>
 
     <properties>
