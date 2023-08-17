@@ -60,7 +60,7 @@ public class Main {
                 .map(GCP.Prefix::ipv6Prefix)
                 .toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/gcp/gcp-ipv4.json", new Prefixes("GCP", ipv4));
         FileWriter.writeTextFile("data/gcp/gcp-ipv4.txt", new Prefixes("GCP", ipv4));
 

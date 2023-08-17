@@ -57,7 +57,7 @@ public class Main {
                 .map(AWS.PrefixIpv6::ipv6_prefix)
                 .toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/aws/aws-ipv4.json", new Prefixes("AWS", ipv4));
         FileWriter.writeTextFile("data/aws/aws-ipv4.txt", new Prefixes("AWS", ipv4));
 

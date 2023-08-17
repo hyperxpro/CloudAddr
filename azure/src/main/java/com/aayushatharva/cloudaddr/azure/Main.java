@@ -71,7 +71,7 @@ public final class Main {
                 .sorted(IPv6AddressComparator.INSTANCE)
                 .toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/azure/azure-ipv4.json", new Prefixes("Azure", ipv4Prefixes));
         FileWriter.writeTextFile("data/azure/azure-ipv4.txt", new Prefixes("Azure", ipv4Prefixes));
 

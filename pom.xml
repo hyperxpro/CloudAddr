@@ -18,6 +18,7 @@
         <module>linode</module>
         <module>oracle</module>
         <module>cloudflare</module>
+        <module>ibm</module>
     </modules>
 
     <properties>

@@ -57,7 +57,7 @@ public class Main {
                 .sorted(IPv6AddressComparator.INSTANCE)
                 .toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/digitalocean/digitalocean-ipv4.json", new Prefixes("DigitalOcean", ipv4Prefixes));
         FileWriter.writeTextFile("data/digitalocean/digitalocean-ipv4.txt", new Prefixes("DigitalOcean", ipv4Prefixes));
 

@@ -32,7 +32,7 @@ public class Main {
         List<String> ipv4 = responseIpv4.body().toList();
         List<String> ipv6 = responseIpv6.body().toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/cloudflare/cloudflare-ipv4.json", new Prefixes("Cloudflare", ipv4));
         FileWriter.writeTextFile("data/cloudflare/cloudflare-ipv4.txt", new Prefixes("Cloudflare", ipv4));
 

@@ -48,7 +48,7 @@ public class Main {
             }
         });
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/oci/oci-ipv4.json", new Prefixes("OCI", ipv4Prefixes));
         FileWriter.writeTextFile("data/oci/oci-ipv4.txt", new Prefixes("OCI", ipv4Prefixes));
 

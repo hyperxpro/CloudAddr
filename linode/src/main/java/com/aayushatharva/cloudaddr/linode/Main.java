@@ -56,7 +56,7 @@ public class Main {
                 .sorted(IPv6AddressComparator.INSTANCE)
                 .toList();
 
-        // Write IPv6 prefixes to file
+        // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/linode/linode-ipv4.json", new Prefixes("Linode", ipv4Prefixes));
         FileWriter.writeTextFile("data/linode/linode-ipv4.txt", new Prefixes("Linode", ipv4Prefixes));
 
