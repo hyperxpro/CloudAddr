@@ -1,10 +1,10 @@
 package com.aayushatharva.cloudaddr.gcp;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.aayushatharva.cloudaddr.core.FileWriter;
 import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
 import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
 import com.aayushatharva.cloudaddr.core.Prefixes;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.net.URI;

@@ -1,10 +1,10 @@
 package com.aayushatharva.cloudaddr.azure;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.aayushatharva.cloudaddr.core.FileWriter;
 import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
 import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
 import com.aayushatharva.cloudaddr.core.Prefixes;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN;
 
