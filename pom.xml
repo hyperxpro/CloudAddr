@@ -14,6 +14,7 @@
         <module>aws</module>
         <module>gcp</module>
         <module>azure</module>
+        <module>digitalocean</module>
     </modules>
 
     <properties>

@@ -18,10 +18,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN;
+
 public final class Main {
 
     private static final HttpClient HTTP_CLIENT = HttpClient.newHttpClient();
-    private static final Pattern IPV4_PATTERN = Pattern.compile("^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/(3[0-2]|[1-2]?[0-9])$");
 
     public static void main(String[] args) throws IOException, InterruptedException {
         List<String> dates = last7Days();
