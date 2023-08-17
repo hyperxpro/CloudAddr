@@ -16,6 +16,7 @@
         <module>azure</module>
         <module>digitalocean</module>
         <module>linode</module>
+        <module>oracle</module>
     </modules>
 
     <properties>
