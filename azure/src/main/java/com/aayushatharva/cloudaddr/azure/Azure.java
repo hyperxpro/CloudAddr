@@ -1,4 +1,4 @@
-package io.github.secwrk.cloudaddr.azure;
+package com.aayushatharva.cloudaddr.azure;
 
 import java.util.List;
 

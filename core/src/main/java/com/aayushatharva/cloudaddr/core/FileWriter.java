@@ -1,4 +1,4 @@
-package io.github.secwrk.cloudaddr.core;
+package com.aayushatharva.cloudaddr.core;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

@@ -1,4 +1,4 @@
-package io.github.secwrk.cloudaddr.gcp;
+package com.aayushatharva.cloudaddr.gcp;
 
 import java.util.List;
 

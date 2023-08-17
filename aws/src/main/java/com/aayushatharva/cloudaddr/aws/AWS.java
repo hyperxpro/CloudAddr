@@ -1,4 +1,4 @@
-package io.github.secwrk.cloudaddr.aws;
+package com.aayushatharva.cloudaddr.aws;
 
 import java.util.List;
 

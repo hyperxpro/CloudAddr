@@ -1,4 +1,4 @@
-package io.github.secwrk.cloudaddr.core;
+package com.aayushatharva.cloudaddr.core;
 
 import java.util.List;
 

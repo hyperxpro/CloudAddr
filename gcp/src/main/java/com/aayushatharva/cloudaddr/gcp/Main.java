@@ -1,10 +1,10 @@
-package io.github.secwrk.cloudaddr.gcp;
+package com.aayushatharva.cloudaddr.gcp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.secwrk.cloudaddr.core.FileWriter;
-import io.github.secwrk.cloudaddr.core.IPv4AddressComparator;
-import io.github.secwrk.cloudaddr.core.IPv6AddressComparator;
-import io.github.secwrk.cloudaddr.core.Prefixes;
+import com.aayushatharva.cloudaddr.core.FileWriter;
+import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
+import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
+import com.aayushatharva.cloudaddr.core.Prefixes;
 
 import java.io.IOException;
 import java.net.URI;
