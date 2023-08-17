@@ -15,6 +15,7 @@
         <module>gcp</module>
         <module>azure</module>
         <module>digitalocean</module>
+        <module>linode</module>
     </modules>
 
     <properties>

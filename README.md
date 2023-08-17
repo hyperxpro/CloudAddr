@@ -6,3 +6,4 @@ CloudAddr is a application to get list of public cloud providers (such as AWS, A
 - Google Cloud Platform (GCP)
 - Microsoft Azure
 - DigitalOcean
+- Linode
