@@ -17,6 +17,7 @@
         <module>digitalocean</module>
         <module>linode</module>
         <module>oracle</module>
+        <module>cloudflare</module>
     </modules>
 
     <properties>

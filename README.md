@@ -8,3 +8,4 @@ CloudAddr is a application to get list of public cloud providers (such as AWS, A
 - DigitalOcean
 - Linode
 - Oracle Cloud Infrastructure (OCI)
+- Cloudflare
