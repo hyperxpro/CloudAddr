@@ -8,10 +8,12 @@
     <artifactId>cloudaddr</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <modules>
-        <module>aws</module>
         <module>core</module>
+        <module>aws</module>
         <module>gcp</module>
+        <module>azure</module>
     </modules>
 
     <properties>
