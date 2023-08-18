@@ -1,6 +1,8 @@
 package com.aayushatharva.cloudaddr.oracle;
 
 import com.aayushatharva.cloudaddr.core.FileWriter;
+import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
+import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
 import com.aayushatharva.cloudaddr.core.Prefixes;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -47,6 +49,9 @@ public class Main {
                 ipv6Prefixes.add(prefix);
             }
         });
+
+        ipv4Prefixes.sort(IPv4AddressComparator.INSTANCE);
+        ipv6Prefixes.sort(IPv6AddressComparator.INSTANCE);
 
         // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/oci/oci-ipv4.json", new Prefixes("OCI", ipv4Prefixes));
