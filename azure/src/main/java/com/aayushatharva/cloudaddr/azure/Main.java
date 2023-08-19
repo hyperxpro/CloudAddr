@@ -17,7 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN;
+import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN_CIDR;
 
 public final class Main {
 
@@ -49,7 +49,7 @@ public final class Main {
         azure.values().forEach(value -> {
             if (value.properties().addressPrefixes() != null) {
                 value.properties().addressPrefixes().forEach(addressPrefix -> {
-                    if (IPV4_PATTERN.matcher(addressPrefix).matches()) {
+                    if (IPV4_PATTERN_CIDR.matcher(addressPrefix).matches()) {
                         azureIpv4Addresses.add(addressPrefix);
                     } else {
                         azureIpv6Addresses.add(addressPrefix);

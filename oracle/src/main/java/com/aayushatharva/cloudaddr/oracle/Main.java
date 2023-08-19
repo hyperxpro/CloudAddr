@@ -14,7 +14,7 @@ import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN;
+import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN_CIDR;
 
 public class Main {
 
@@ -43,7 +43,7 @@ public class Main {
         List<String> ipv6Prefixes = new ArrayList<>();
 
         oraclePrefixes.forEach(prefix -> {
-            if (IPV4_PATTERN.matcher(prefix).matches()) {
+            if (IPV4_PATTERN_CIDR.matcher(prefix).matches()) {
                 ipv4Prefixes.add(prefix);
             } else {
                 ipv6Prefixes.add(prefix);

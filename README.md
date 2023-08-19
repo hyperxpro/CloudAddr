@@ -10,3 +10,4 @@ CloudAddr is a application to get list of public cloud providers (such as AWS, A
 - Oracle Cloud Infrastructure (OCI)
 - Cloudflare
 - IBM Cloud
+- Vultr
