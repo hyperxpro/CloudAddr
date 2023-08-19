@@ -1,10 +1,9 @@
-package com.aayushatharva.cloudaddr.vultr;
+package com.aayushatharva.cloudaddr;
 
 import com.aayushatharva.cloudaddr.core.FileWriter;
 import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
 import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
 import com.aayushatharva.cloudaddr.core.Prefixes;
-import com.aayushatharva.cloudaddr.core.Utils;
 import com.aayushatharva.cloudaddr.dbipcsv.DbIpCsv;
 import com.aayushatharva.cloudaddr.dbipcsv.DbIpCsvReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -24,7 +23,7 @@ import static com.aayushatharva.cloudaddr.core.Utils.generateCidr;
 
 public class Main {
 
-    private static final int VULTR_ASN = 20473;
+    private static final int OVH_ASN = 16276;
 
     public static void main(String[] args) throws CsvValidationException, IOException, InterruptedException {
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -38,7 +37,7 @@ public class Main {
 
         List<DbIpCsv> dbIpCsvList = DbIpCsvReader.decompressGzAndRead(new ArrayList<>(), response.body())
                 .stream()
-                .filter(dbIpCsv -> dbIpCsv.asn() == VULTR_ASN)
+                .filter(dbIpCsv -> dbIpCsv.asn() == OVH_ASN)
                 .toList();
 
         List<String> ipv4Prefixes = dbIpCsvList.stream()
@@ -56,11 +55,11 @@ public class Main {
                 .toList();
 
         // Write IPv4 prefixes to file
-        FileWriter.writeJsonFile("data/vultr/vultr-ipv4.json", new Prefixes("Vultr", ipv4Prefixes));
-        FileWriter.writeTextFile("data/vultr/vultr-ipv4.txt", new Prefixes("Vultr", ipv4Prefixes));
+        FileWriter.writeJsonFile("data/ovh/ovh-ipv4.json", new Prefixes("OVH", ipv4Prefixes));
+        FileWriter.writeTextFile("data/ovh/ovh-ipv4.txt", new Prefixes("OVH", ipv4Prefixes));
 
         // Write IPv6 prefixes to file
-        FileWriter.writeJsonFile("data/vultr/vultr-ipv6.json", new Prefixes("Vultr", ipv6Prefixes));
-        FileWriter.writeTextFile("data/vultr/vultr-ipv6.txt", new Prefixes("Vultr", ipv6Prefixes));
+        FileWriter.writeJsonFile("data/ovh/ovh-ipv6.json", new Prefixes("OVH", ipv6Prefixes));
+        FileWriter.writeTextFile("data/ovh/ovh-ipv6.txt", new Prefixes("OVH", ipv6Prefixes));
     }
 }
