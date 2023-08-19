@@ -22,6 +22,7 @@
         <module>db-ip-csv</module>
         <module>vultr</module>
         <module>ovh</module>
+        <module>scaleway</module>
     </modules>
 
     <properties>

@@ -12,3 +12,4 @@ CloudAddr is a application to get list of public cloud providers (such as AWS, A
 - IBM Cloud
 - Vultr
 - OVH
+- Scaleway
