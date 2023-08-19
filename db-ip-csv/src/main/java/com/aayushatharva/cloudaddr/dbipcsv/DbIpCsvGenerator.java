@@ -1,11 +1,7 @@
-package com.aayushatharva.cloudaddr;
+package com.aayushatharva.cloudaddr.dbipcsv;
 
-import com.aayushatharva.cloudaddr.core.FileWriter;
 import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
 import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
-import com.aayushatharva.cloudaddr.core.Prefixes;
-import com.aayushatharva.cloudaddr.dbipcsv.DbIpCsv;
-import com.aayushatharva.cloudaddr.dbipcsv.DbIpCsvReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.IOException;
@@ -16,16 +12,23 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static com.aayushatharva.cloudaddr.core.Utils.IPV4_PATTERN;
 import static com.aayushatharva.cloudaddr.core.Utils.generateCidr;
 
-public class Main {
+public class DbIpCsvGenerator {
 
-    private static final int OVH_ASN = 16276;
-
-    public static void main(String[] args) throws CsvValidationException, IOException, InterruptedException {
+    /**
+     * Generates a list of {@link DbIpCsv} objects by downloading it from <a href="https://db-ip.com/db/download/ip-to-asn-lite">db-ip.com</a>
+     *
+     * @return List of {@link DbIpCsv} objects (unmodifiable)
+     * @throws IOException            If an I/O error occurs
+     * @throws CsvValidationException If an error occurs while validating CSV file
+     * @throws InterruptedException   If the operation is interrupted
+     */
+    public static List<DbIpCsv> generateList() throws CsvValidationException, IOException, InterruptedException {
         HttpClient httpClient = HttpClient.newHttpClient();
 
         String[] currentMonthAndYear = DbIpCsvReader.currentMonthAndYear();
@@ -34,32 +37,32 @@ public class Main {
                 .build();
 
         HttpResponse<InputStream> response = httpClient.send(request, HttpResponse.BodyHandlers.ofInputStream());
+        return Collections.unmodifiableList(DbIpCsvReader.decompressGzAndRead(new ArrayList<>(), response.body()));
+    }
 
-        List<DbIpCsv> dbIpCsvList = DbIpCsvReader.decompressGzAndRead(new ArrayList<>(), response.body())
-                .stream()
-                .filter(dbIpCsv -> dbIpCsv.asn() == OVH_ASN)
-                .toList();
-
-        List<String> ipv4Prefixes = dbIpCsvList.stream()
+    /**
+     * Generates a list of IPv4 and IPv6 prefixes from {@link DbIpCsv} objects
+     *
+     * @param dbIpCsvList  List of {@link DbIpCsv} objects
+     * @param ipv4Prefixes List of IPv4 prefixes
+     * @param ipv6Prefixes List of IPv6 prefixes
+     */
+    public static void generatePrefixes(List<DbIpCsv> dbIpCsvList, List<String> ipv4Prefixes, List<String> ipv6Prefixes) {
+        List<String> ipv4PrefixesFiltered = dbIpCsvList.stream()
                 .filter(dbIpCsv -> IPV4_PATTERN.matcher(dbIpCsv.start()).matches())
                 .map(dbIpCsv -> generateCidr(dbIpCsv.start(), dbIpCsv.end()))
                 .flatMap(Arrays::stream)
                 .sorted(IPv4AddressComparator.INSTANCE)
                 .toList();
 
-        List<String> ipv6Prefixes = dbIpCsvList.stream()
+        List<String> ipv6PrefixesFiltered = dbIpCsvList.stream()
                 .filter(dbIpCsv -> !IPV4_PATTERN.matcher(dbIpCsv.start()).matches())
                 .map(dbIpCsv -> generateCidr(dbIpCsv.start(), dbIpCsv.end()))
                 .flatMap(Arrays::stream)
                 .sorted(IPv6AddressComparator.INSTANCE)
                 .toList();
 
-        // Write IPv4 prefixes to file
-        FileWriter.writeJsonFile("data/ovh/ovh-ipv4.json", new Prefixes("OVH", ipv4Prefixes));
-        FileWriter.writeTextFile("data/ovh/ovh-ipv4.txt", new Prefixes("OVH", ipv4Prefixes));
-
-        // Write IPv6 prefixes to file
-        FileWriter.writeJsonFile("data/ovh/ovh-ipv6.json", new Prefixes("OVH", ipv6Prefixes));
-        FileWriter.writeTextFile("data/ovh/ovh-ipv6.txt", new Prefixes("OVH", ipv6Prefixes));
+        ipv4Prefixes.addAll(ipv4PrefixesFiltered);
+        ipv6Prefixes.addAll(ipv6PrefixesFiltered);
     }
 }
