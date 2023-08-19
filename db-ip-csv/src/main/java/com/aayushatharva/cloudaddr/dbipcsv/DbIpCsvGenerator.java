@@ -1,7 +1,6 @@
 package com.aayushatharva.cloudaddr.dbipcsv;
 
-import com.aayushatharva.cloudaddr.core.IPv4AddressComparator;
-import com.aayushatharva.cloudaddr.core.IPv6AddressComparator;
+import com.aayushatharva.cloudaddr.core.IPAddressComparator;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.IOException;
@@ -52,14 +51,14 @@ public class DbIpCsvGenerator {
                 .filter(dbIpCsv -> IPV4_PATTERN.matcher(dbIpCsv.start()).matches())
                 .map(dbIpCsv -> generateCidr(dbIpCsv.start(), dbIpCsv.end()))
                 .flatMap(Arrays::stream)
-                .sorted(IPv4AddressComparator.INSTANCE)
+                .sorted(IPAddressComparator.INSTANCE)
                 .toList();
 
         List<String> ipv6PrefixesFiltered = dbIpCsvList.stream()
                 .filter(dbIpCsv -> !IPV4_PATTERN.matcher(dbIpCsv.start()).matches())
                 .map(dbIpCsv -> generateCidr(dbIpCsv.start(), dbIpCsv.end()))
                 .flatMap(Arrays::stream)
-                .sorted(IPv6AddressComparator.INSTANCE)
+                .sorted(IPAddressComparator.INSTANCE)
                 .toList();
 
         ipv4Prefixes.addAll(ipv4PrefixesFiltered);

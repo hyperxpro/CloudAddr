@@ -24,6 +24,7 @@
         <module>ovh</module>
         <module>scaleway</module>
         <module>tencent</module>
+        <module>generator</module>
     </modules>
 
     <properties>

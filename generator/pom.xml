@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.aayushatharva.cloudaddr</groupId>
+        <artifactId>cloudaddr</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>cloudaddr-generator</artifactId>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-aws</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-azure</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-cloudflare</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-digitalocean</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-gcp</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-ibmcloud</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-linode</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-oracle</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-ovh</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-scaleway</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-tencent</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-vultr</artifactId>
+            <version>${parent.version}</version>
+        </dependency>
+    </dependencies>
+</project>
