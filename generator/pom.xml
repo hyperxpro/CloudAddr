@@ -21,73 +21,73 @@
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-aws</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-azure</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-cloudflare</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-digitalocean</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-gcp</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-ibmcloud</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-linode</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-oracle</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-ovh</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-scaleway</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-tencent</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-vultr</artifactId>
-            <version>${parent.version}</version>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 </project>
