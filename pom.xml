@@ -23,6 +23,7 @@
         <module>vultr</module>
         <module>ovh</module>
         <module>scaleway</module>
+        <module>tencent</module>
     </modules>
 
     <properties>
