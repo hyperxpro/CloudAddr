@@ -15,6 +15,7 @@ CloudAddr is a application to get list of public cloud providers (such as AWS, A
 - Scaleway
 - Tencent Cloud
 - Hetzner
+- Worldstream
 
 ## Generated Data
 All data is generated on this [CloudAddr-Generated](https://github.com/hyperxpro/CloudAddr-Generated) repository.

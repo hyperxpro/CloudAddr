@@ -13,6 +13,7 @@ import com.aayushatharva.cloudaddr.ovh.OVHGenerator;
 import com.aayushatharva.cloudaddr.scaleway.Scaleway;
 import com.aayushatharva.cloudaddr.tencent.TencentGenerator;
 import com.aayushatharva.cloudaddr.vultr.VultrGenerator;
+import com.aayushatharva.cloudaddr.worldstream.WorlstreamGenerator;
 import com.opencsv.exceptions.CsvValidationException;
 
 import java.io.IOException;
@@ -59,6 +60,9 @@ public class Main {
 
         // Vultr
         VultrGenerator.main(args);
+
+        // Worldstream
+        WorlstreamGenerator.main(args);
 
         // Merge all prefixes
         AllMergedGenerator.main(args);

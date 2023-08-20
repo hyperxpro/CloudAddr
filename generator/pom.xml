@@ -95,5 +95,11 @@
             <artifactId>cloudaddr-vultr</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-worldstream</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 </project>

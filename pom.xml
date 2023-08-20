@@ -26,6 +26,7 @@
         <module>tencent</module>
         <module>generator</module>
         <module>hetzner</module>
+        <module>worldstream</module>
     </modules>
 
     <properties>
