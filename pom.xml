@@ -25,6 +25,7 @@
         <module>scaleway</module>
         <module>tencent</module>
         <module>generator</module>
+        <module>hetzner</module>
     </modules>
 
     <properties>

@@ -5,6 +5,7 @@ import com.aayushatharva.cloudaddr.azure.AzureGenerator;
 import com.aayushatharva.cloudaddr.cloudflare.CloudflareGenerator;
 import com.aayushatharva.cloudaddr.digitalocean.DigialOceanGenerator;
 import com.aayushatharva.cloudaddr.gcp.GCPGenerator;
+import com.aayushatharva.cloudaddr.hetzner.HetznerGenerator;
 import com.aayushatharva.cloudaddr.ibm.IBMGenerator;
 import com.aayushatharva.cloudaddr.linode.LinodeGenerator;
 import com.aayushatharva.cloudaddr.oracle.OracleGenerator;
@@ -34,6 +35,9 @@ public class Main {
 
         // GCP
         GCPGenerator.main(args);
+
+        // Hetzner
+        HetznerGenerator.main(args);
 
         // IBM
         IBMGenerator.main(args);

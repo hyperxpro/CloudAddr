@@ -50,6 +50,12 @@
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-hetzner</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-ibmcloud</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
