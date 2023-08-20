@@ -55,5 +55,8 @@ public class Main {
 
         // Vultr
         VultrGenerator.main(args);
+
+        // Merge all prefixes
+        AllMergedGenerator.main(args);
     }
 }
