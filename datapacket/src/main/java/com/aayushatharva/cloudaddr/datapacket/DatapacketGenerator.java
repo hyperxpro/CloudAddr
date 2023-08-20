@@ -1,4 +1,4 @@
-package com.aayushatharva.cloudaddr.vultr;
+package com.aayushatharva.cloudaddr.datapacket;
 
 import com.aayushatharva.cloudaddr.core.FileWriter;
 import com.aayushatharva.cloudaddr.core.Prefixes;
@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VultrGenerator {
+public class DatapacketGenerator {
 
-    private static final int VULTR_ASN = 20473;
+    private static final int DATAPACKET_ASN = 212238;
 
     public static void main(String[] args) throws CsvValidationException, IOException, InterruptedException {
         List<DbIpCsv> dbIpCsvList = DbIpCsvGenerator.generateList();
         List<DbIpCsv> dbIpCsvListForAsn = dbIpCsvList.stream()
-                .filter(dbIpCsv -> dbIpCsv.asn() == VULTR_ASN)
+                .filter(dbIpCsv -> dbIpCsv.asn() == DATAPACKET_ASN)
                 .toList();
 
         List<String> ipv4Prefixes = new ArrayList<>();
@@ -25,11 +25,11 @@ public class VultrGenerator {
         DbIpCsvGenerator.generatePrefixes(dbIpCsvListForAsn, ipv4Prefixes, ipv6Prefixes);
 
         // Write IPv4 prefixes to file
-        FileWriter.writeJsonFile("data/vultr/vultr-ipv4.json", new Prefixes("Vultr", ipv4Prefixes));
-        FileWriter.writeTextFile("data/vultr/vultr-ipv4.txt", new Prefixes("Vultr", ipv4Prefixes));
+        FileWriter.writeJsonFile("data/datapacket/datapacket-ipv4.json", new Prefixes("DataPacket", ipv4Prefixes));
+        FileWriter.writeTextFile("data/datapacket/datapacket-ipv4.txt", new Prefixes("DataPacket", ipv4Prefixes));
 
         // Write IPv6 prefixes to file
-        FileWriter.writeJsonFile("data/vultr/vultr-ipv6.json", new Prefixes("Vultr", ipv6Prefixes));
-        FileWriter.writeTextFile("data/vultr/vultr-ipv6.txt", new Prefixes("Vultr", ipv6Prefixes));
+        FileWriter.writeJsonFile("data/datapacket/datapacket-ipv6.json", new Prefixes("DataPacket", ipv6Prefixes));
+        FileWriter.writeTextFile("data/datapacket/datapacket-ipv6.txt", new Prefixes("DataPacket", ipv6Prefixes));
     }
 }

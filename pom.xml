@@ -27,6 +27,7 @@
         <module>generator</module>
         <module>hetzner</module>
         <module>worldstream</module>
+        <module>datapacket</module>
     </modules>
 
     <properties>

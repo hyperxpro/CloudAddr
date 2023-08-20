@@ -16,13 +16,13 @@ public class Scaleway {
 
     public static void main(String[] args) throws CsvValidationException, IOException, InterruptedException {
         List<DbIpCsv> dbIpCsvList = DbIpCsvGenerator.generateList();
-        List<DbIpCsv> dbIpCsvListVultr = dbIpCsvList.stream()
+        List<DbIpCsv> dbIpCsvListForAsn = dbIpCsvList.stream()
                 .filter(dbIpCsv -> dbIpCsv.asn() == SCALEWAY_ASN)
                 .toList();
 
         List<String> ipv4Prefixes = new ArrayList<>();
         List<String> ipv6Prefixes = new ArrayList<>();
-        DbIpCsvGenerator.generatePrefixes(dbIpCsvListVultr, ipv4Prefixes, ipv6Prefixes);
+        DbIpCsvGenerator.generatePrefixes(dbIpCsvListForAsn, ipv4Prefixes, ipv6Prefixes);
 
         // Write IPv4 prefixes to file
         FileWriter.writeJsonFile("data/scaleway/scaleway-ipv4.json", new Prefixes("Scaleway", ipv4Prefixes));

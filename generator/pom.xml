@@ -38,6 +38,12 @@
 
         <dependency>
             <groupId>com.aayushatharva.cloudaddr</groupId>
+            <artifactId>cloudaddr-datapacket</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aayushatharva.cloudaddr</groupId>
             <artifactId>cloudaddr-digitalocean</artifactId>
             <version>${project.parent.version}</version>
         </dependency>

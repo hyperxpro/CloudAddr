@@ -3,6 +3,7 @@ package com.aayushatharva.cloudaddr.generator;
 import com.aayushatharva.cloudaddr.aws.AwsGenerator;
 import com.aayushatharva.cloudaddr.azure.AzureGenerator;
 import com.aayushatharva.cloudaddr.cloudflare.CloudflareGenerator;
+import com.aayushatharva.cloudaddr.datapacket.DatapacketGenerator;
 import com.aayushatharva.cloudaddr.digitalocean.DigialOceanGenerator;
 import com.aayushatharva.cloudaddr.gcp.GCPGenerator;
 import com.aayushatharva.cloudaddr.hetzner.HetznerGenerator;
@@ -31,37 +32,40 @@ public class Main {
         // Generate Cloudflare prefixes
         CloudflareGenerator.main(args);
 
-        // DigitalOcean
+        // Generate Datapacket prefixes
+        DatapacketGenerator.main(args);
+
+        // DigitalOcean prefixes
         DigialOceanGenerator.main(args);
 
-        // GCP
+        // GCP prefixes
         GCPGenerator.main(args);
 
-        // Hetzner
+        // Hetzner prefixes
         HetznerGenerator.main(args);
 
-        // IBM
+        // IBM prefixes
         IBMGenerator.main(args);
 
-        // Linode
+        // Linode prefixes
         LinodeGenerator.main(args);
 
-        // Oracle
+        // Oracle prefixes
         OracleGenerator.main(args);
 
-        // OVH
+        // OVH prefixes
         OVHGenerator.main(args);
 
-        // Scaleway
+        // Scaleway prefixes
         Scaleway.main(args);
 
-        // Tencent
+        // Tencent prefixes
         TencentGenerator.main(args);
 
-        // Vultr
+        // Vultr prefixes
         VultrGenerator.main(args);
 
-        // Worldstream
+        // Worldstream prefixes
         WorlstreamGenerator.main(args);
 
         // Merge all prefixes
